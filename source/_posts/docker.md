@@ -151,7 +151,7 @@ sudo docker run -d --name my_nginx nginx   #给容器自定义名字
 sudo docker run -it --rm alpine   #-it让控制台进入容器，--rm停止时删除容器
 sudo docker run -d --restart always nginx  #容器停止就重启
 sudo docker run -d --restart unless-stopped nginx   #手动停止时不重启
-```  
+```
 
 ## 调试容器
 
@@ -289,3 +289,49 @@ gh --version
 ``` TERMINAL
 gh auth login
 ```
+
+使用以下命令将镜像推送到 GitHub
+``` TERMINAL
+docker push ghcr.io/yourusername/your-repo-name:tag
+```
+
+## MySQL
+
+### 安装MySQL
+
+进入安装网址 https://downloads.mysql.com/archives/installer/ 
+{% asset_img mysql1.png %}
+
+下载好打开文件
+{% asset_img mysql2.png %}
+先点击Custom，next，此时右边框内是空的，所以点击back回来，点击Full，next，再点击back回来。这时再进入Custom，右边框就有了内容，如图
+{% asset_img mysql3.png %}
+
+按图点击，将第一个地址改为
+``` 
+D:\MySQL\MySQL Server 8.0
+```
+{% asset_img mysql4.png %}
+
+将第二个地址改为
+``` 
+D:\MySQL\MySQL Workbench 8.0
+```
+
+全部都照上面方法改了后，点击next，然后点击Execute，ShowDetails
+
+加载好后一直点击next，直到Accounts and Roles
+输入密码，我设简单的123456，点击next
+其中"MySQL80"就是MySQL作为window的一个系统服务名称
+之后一直点击next，然后点击Execute，等待，之后点击finish，点击cancel
+
+### 启动MySQL
+
+用管理员身份打开命令提示符
+``` bash
+net start mysql80    #启动服务器
+net stop mysql80     #关闭服务
+```
+
+将MySQL与客户端连接
+搜索栏搜索MySQL，如图点击，输入密码123456，便能正常使用
