@@ -173,6 +173,12 @@ url: https://celadon-jelly-d6c1a9.netlify.app/
 {% asset_img url.png %}
 
 ### 书写内容
+我们先切换到博客目录，生成一篇新的博客
+``` bash
+$ cd myblog                 #博客名称
+$ hexo new "firstblog"
+```
+
 生成的博客会放在source->_posts中，进去后打开你要编写的.md文件，输入想写的内容
 {% asset_img write.png %}
 
@@ -184,14 +190,14 @@ $ {% asset_img photo.png %}
 
 ### 上传博客
 完成任何修改后，都需要重新生成静态文件，然后上传到github中
-``` bash
-$ hexo clean       #清理缓存
-$ hexo generate    #重新生成,或写成hexo g
-$ hexo server      #启动预览,或写成hexo s
+``` bashs
+$ hexo clean                   #清理缓存
+$ hexo generate                #重新生成,或写成hexo g
+$ hexo server                  #启动预览,或写成hexo s
 
-$ git add .        #添加文件到暂存区
+$ git add .                    #添加文件到暂存区
 $ git commit -m "修改的地方"    #本次修改的说明
-$ git push         #推送
+$ git push                     #推送
 ```
 
 写博客的基础操作如上，还有许多功能值得我们一一探索。
